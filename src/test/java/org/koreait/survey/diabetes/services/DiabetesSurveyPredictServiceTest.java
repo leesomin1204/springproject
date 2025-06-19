@@ -1,4 +1,4 @@
-package org.koreait.survey.services;
+package org.koreait.survey.diabetes.services;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.koreait.global.constants.Gender;
 import org.koreait.survey.diabetes.constants.SmokingHistory;
 import org.koreait.survey.diabetes.controllers.RequestDiabetesSurvey;
-import org.koreait.survey.diabetes.services.DiabetesSurveyPredictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -22,7 +21,7 @@ public class DiabetesSurveyPredictServiceTest {
 
     @Test
     void test() throws Exception {
-        String json = "[[0.0, 39.0, 0.0, 0.0, 1.0, 24.11, 3.5, 145.0], [1.0, 78.0, 0.0, 1.0, 5.0, 30.27, 5.7, 200.0], [1.0, 66.0, 0.0, 0.0, 4.0, 36.09, 3.5, 158.0], [0.0, 53.0, 0.0, 0.0, 1.0, 25.5, 6.5, 126.0], [1.0, 51.0, 0.0, 0.0, 4.0, 28.92, 6.0, 160.0]]";
+        String json = "[[1.0, 46.0, 0.0, 0.0, 3.0, 29.6, 5.8, 130.0], [1.0, 69.0, 1.0, 0.0, 4.0, 29.52, 3.5, 140.0], [0.0, 50.0, 0.0, 0.0, 0.0, 27.32, 5.7, 140.0], [0.0, 74.0, 0.0, 0.0, 3.0, 25.53, 4.5, 159.0], [0.0, 80.0, 1.0, 0.0, 4.0, 21.17, 6.6, 145.0]]";
 
         List<List<Number>> items = om.readValue(json, new TypeReference<>() {});
 
@@ -32,11 +31,10 @@ public class DiabetesSurveyPredictServiceTest {
 
     @Test
     void test2() {
-        // List<Number> item = List.of(1, 39.0, 0.0, 0.0, 3, 24.11, 3.5, 130);
-//        List<Number> item = List.of(1, 41, 0, 0, 0, 29.6, 8.2, 126);
-//
-//        boolean result = service.isDiabetes(item);
-//        System.out.println(result);
+        //List<Number> item = List.of(1, 46.0, 0.0, 0.0, 3, 29.6, 5.8, 130);
+        //List<Number> item = List.of(1, 41, 0, 0, 0,29.6, 8.2, 126);
+        //boolean result = service.isDiabetes(item);
+        //System.out.println(result);
         RequestDiabetesSurvey form = new RequestDiabetesSurvey();
         form.setGender(Gender.MALE);
         form.setAge(41);
