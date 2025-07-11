@@ -1,10 +1,12 @@
 package org.koreait.admin.main.controllers;
 
+import org.koreait.global.annotations.ApplyCommonController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@ApplyCommonController
 @RequestMapping("/admin")
 public class MainController {
 
