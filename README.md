@@ -37,7 +37,7 @@
 - Restaurant
   - DB 매핑 모델
 
-![대체 텍스트](images/restaurant.png)
+![대체 텍스트](resources/images/restaurant.png)
 
 # 당뇨 고위험군 진단 설문 서비스
 - 개인의 건강 데이터를 기반으로 당뇨병 발병 위험도를 예측하여 조기 진단과 예방조치를 돕는 AI 기반 헬스케어 솔루션 개발
@@ -72,5 +72,5 @@
 - UserHealthData
   - 건강 정보 DB 매핑 모델
 
-![대체 텍스트](images/diabetes_step1.png)
-![대체 텍스트](images/diabetes_step2.png)
+![대체 텍스트](resources/images/diabetes_step1.png)
+![대체 텍스트](resources/images/diabetes_step2.png)
