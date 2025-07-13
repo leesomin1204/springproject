@@ -24,7 +24,7 @@ public class DataTransfer {
     void process() throws Exception {
         CsvMapper mapper = new CsvMapper();
 
-        try (FileInputStream fis = new FileInputStream("C:/restaurant/data.csv");
+        try (FileInputStream fis = new FileInputStream("/Users/isomin/Documents/project/data.csv");
             InputStreamReader isr = new InputStreamReader(fis);
             BufferedReader br = new BufferedReader(isr, 16000)) {
             int cnt = 0;

@@ -12,7 +12,6 @@
             <dt th:text="#{키/몸무게}"></dt>
             <dd>
                 <input type="text" name="height" th:field="*{height}" min="50" max="350">cm
-                /
                 <input type="text" name="weight" th:field="*{weight}" min="10" max="450"> kg
                 <div class="error" th:each="err : ${#fields.errors('height')}" th:text="${err}"></div>
                 <div class="error" th:each="err : ${#fields.errors('weight')}" th:text="${err}"></div>
@@ -33,9 +32,13 @@
             </dd>
         </dl>
         <div class="button-group">
-            <a th:href="@{/survey/diabetes/step1}" th:text="#{이전_페이지}" class="btn"></a>
+            <button type="button"
+                    th:onclick="|location.href='@{/survey/diabetes/step1}'|"
+                    th:text="#{이전_페이지}"
+                    class="btn btn-action">
+            </button>
+            <button type="submit" th:text="#{결과보기}" class="btn btn-action"></button>
         </div>
-        <button type="submit" th:text="#{결과보기}"></button>
     </form>
 </main>
 </html>

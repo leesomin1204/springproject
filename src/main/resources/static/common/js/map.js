@@ -3,23 +3,26 @@ commonLib.mapLib = {
     callback: null,
     // 카카오 맵 SDK를 동적 로딩
     init() {
-        const headEl = document.head;
-        // 카카오 맵 SDK 자바스크립트가 추가된 상태가 아니라면 추가
-        if (!document.getElementById("kakao-map-sdk")) {
-            const scriptEl = document.createElement("script");
-            scriptEl.src = "//dapi.kakao.com/v2/maps/sdk.js?appkey=c353cbff16c035545fd3661e0c9019ed";
-            scriptEl.id = "kakao-map-sdk";
-            headEl.prepend(scriptEl);
+            const headEl = document.head;
+            // 카카오 맵 SDK 자바스크립트가 추가된 상태가 아니라면 추가
+            if (!document.getElementById("kakao-map-sdk")) {
+                const scriptEl = document.createElement("script");
+                scriptEl.src = "//dapi.kakao.com/v2/maps/sdk.js?appkey=eaa907479837aff402a0b5b151235c13&autoload=false";
+                scriptEl.id = "kakao-map-sdk";
+                headEl.prepend(scriptEl);
 
-            scriptEl.onload = () => {
-                if (typeof this.callback === 'function') {
-                    this.callback();
-                }
-            };
+                scriptEl.onload = () => {
+                    kakao.maps.load(() => {
+                        if (typeof this.callback === 'function') {
+                            this.callback();
+                        }
+                    });
+                };
 
 
-        }
-    },
+            }
+        },
+
     /**
     * 지도 출력
 
@@ -79,10 +82,10 @@ commonLib.mapLib = {
             });
 
             infoWindow.open(map, marker);
-        });
-    }
-};
+                   });
+               }
+           };
 
-window.addEventListener("DOMContentLoaded", function() {
-   //commonLib.mapLib.init();
-});
+           window.addEventListener("DOMContentLoaded", function() {
+               commonLib.mapLib.init();
+           });

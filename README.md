@@ -1,20 +1,38 @@
-# 파일 공통 모듈
-- 고려할점 
-    - 같은 명칭의 파일을 같은 경로로 올렸을 경우 기존 파일이 덮어씌어지는 문제해결
-    - 중복없는 파일명으로 변환해서 파일을 업로드 -> 혹시라도 다운로드 하는 기능을 만든다면? 일반적인 요구사항은 파일명이 변경되서 서버로 업로드 된다더라도 업로드 시점의 파일명으로 다운로드 되기를 원한다.
-    - 파일 업로드 전, 파일 정보를 DB에 기록, 추가될때 생성된 증감번호(seq)로 파일명을 변경해서 서버로 저장
-    - 하나의 폴더에 너무 많은 파일이 있으면 조회시 느려진다. -> 분산해서 저장
-    - 10의 나머지를 구하면 0~9, 0~9로 폴더를 생성하고 분산해서 저장 
-  - 파일 정보 저장 -> 파일 업로드 완료
-- 게시글 1개  - 그룹 (gid)
-  - 에디터에 첨부하는 이미지 - 위치(에디터)  - location 
-  - 다운로드를 위한 첨부 파일 - 위치(첨부파일)
-  
-- 상품 1개 - 그룹 
-  - 메인 이미지 - 메인위치
-  - 목록 이미지 - 목록 위치 
-  - 상세 설명 이미지 .. - 설명 위치
+# 오늘의 식당 추천 서비스
+- 사용자의 현재 위치를 기반으로 가장 가까운 식당 10곳을 지도에 시각화하여 추천
 
-### @CreatedBy : 로그인한 사용자의 정보 자동 기록
-- AuditorAware 인터페이스 구현
-    - 자동으로 @CreatedBy에 설정될 로그인한 회원정보가 무엇인지를 설정
+## 주요 기능
+- 사용자의 현재 위치 기반 식당 추천
+- Kakao 지도 위에 마커 및 인포윈도우 출력
+- Python (KNN) + Spring Boot 연동을 통한 추천 로직
+- 가상 환경 내 머신러닝 모델 실행 및 결과 파싱
+
+## 사용 기술
+- Back-end : Spring Boot, Thymeleaf, Lombok, Spring Data JDBC
+- Front-end : JavaScript, Kakao Map SDK
+- ML Recommendation : Python (Scikit-Learn), KNN, Pickle
+
+## 핵심 구성 요소
+1. 브라우저
+- JS (DOMContentLoaded, mapLib)
+  - 현재 위치 확인, 지도 렌더링
+
+2. Controller
+- RestaurantController
+  - 요청 수신, 서비스 호출
+
+3. Service
+- RestaurantInfoService
+  - Python 실행 및 결과 가공
+
+4. Python
+- search.py
+  - 거리 기반 추천 ID 계산
+
+5. DB
+- RestaurantRepository
+  - ID 기반 식당 정보 조회
+
+6. Entity
+- Restaurant
+  - DB 매핑 모델

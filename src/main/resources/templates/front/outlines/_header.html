@@ -1,23 +1,78 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-    <header th:fragment="common">
-        <div class="top">
-            <div class="left">
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
-            </div>
-            <div class="right">
-                <th:block th:if="${isLogin}">
-                    <a th:href="@{/mypage}" th:text="${#messages.msg('LOGIN_MSG', loggedMember.name, loggedMember.email)}"></a>
-                    <a th:href="@{/mypage}" th:text="#{마이페이지}"></a>
-                    <a th:href="@{/logout}" th:text="#{로그아웃}"></a>
-                    <a sec:authorize="hasAnyAuthority('ADMIN')" th:href="@{/admin}" th:text="#{사이트_관리}"></a>
-                </th:block>
-                <th:block th:unless="${isLogin}">
-                    <a th:href="@{/member/join}" th:text="#{회원가입}"></a>
-                    <a th:href="@{/member/login}" th:text="#{로그인}"></a>
-                </th:block>
-            </div>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&family=LXGW+Marker+Gothic&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<header th:fragment="common"
+        style="font-family: 'Noto Sans KR', sans-serif; color: #6E5444; font-weight: 400;">
+    <div class="top" style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 40px;
+        background-color: #CBB8A0;
+    ">
+
+        <div class="left">
+            <a th:href="@{/survey/diabetes/step1}"
+               th:text="#{Diabetes Survey}"
+               style="
+                    color: #6E5444;
+                    padding: 6px 14px;
+                    border-radius: 4px;
+                    border: 1px solid #6E5444;
+                    text-decoration: none;
+                    font-size: 0.7rem;
+                    font-weight: 700;
+                    display: inline-block;
+               ">
+            </a>
+            <a th:href="@{/restaurant}"
+               th:text="#{Today's Restaurant}"
+               style="
+                    color: #6E5444;
+                    padding: 6px 14px;
+                    border-radius: 4px;
+                    border: 1px solid #6E5444;
+                    text-decoration: none;
+                    font-size: 0.7rem;
+                    font-weight: 700;
+                    display: inline-block;
+               ">
+            </a>
         </div>
-    </header>
+
+
+        <div class="right" style="
+            display: flex;
+            gap: 24px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        ">
+            <th:block th:if="${isLogin}">
+                <a th:href="@{/mypage}" th:text="${#messages.msg('LOGIN_MSG', loggedMember.name, loggedMember.email)}"
+                   style="color: inherit; text-decoration: none;"></a>
+                <a th:href="@{/mypage}" th:text="#{My Page}"
+                   style="color: inherit; text-decoration: none;"></a>
+                <a th:href="@{/logout}" th:text="#{Log Out}"
+                   style="color: inherit; text-decoration: none;"></a>
+                <a sec:authorize="hasAnyAuthority('ADMIN')" th:href="@{/admin}" th:text="#{사이트_관리}"
+                   style="color: inherit; text-decoration: none;"></a>
+            </th:block>
+            <th:block th:unless="${isLogin}">
+                <a th:href="@{/member/join}" th:text="#{Sign Up}"
+                   style="color: inherit; text-decoration: none;"></a>
+                <a th:href="@{/member/login}" th:text="#{Log In}"
+                   style="color: inherit; text-decoration: none;"></a>
+            </th:block>
+        </div>
+
+    </div>
+</header>
+
 </html>

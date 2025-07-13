@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <footer th:fragment="common">
-        <h1>푸터 영역</h1>
-    </footer>
+<footer th:fragment="common" style="
+    background-color: #EFEAE0;
+    color: #A38C79;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    padding: 24px 40px;
+    font-size: 0.8rem;
+    box-shadow: 0 -2px 8px rgba(86, 68, 63, 0.1);
+    user-select: none;
+    text-align: center;
+">
+    <div style="max-width: 1500px; margin: 0 auto; line-height: 1.6;">
+        <div style="margin-bottom: 8px;">
+            상호 : KoreaCompany | 대표이사 : 이소민
+        </div>
+        <div style="margin-bottom: 8px;">
+            <a href="#" style="color:#A38C79; text-decoration:none;">문의 : leesomin@naver.com | 주소 : 인천광역시 부평구 시장로 7 5층</a>
+        </div>
+        <div style="margin-bottom: 12px;">
+            <a href="#" style="color:#A38C79; font-weight: 700; margin-right:12px; text-decoration:none;">Facebook</a>
+            <a href="#" style="color:#A38C79; font-weight: 700; margin-right:12px; text-decoration:none;">Instagram</a>
+            <a href="#" style="color:#A38C79; font-weight: 700; margin-right:12px; text-decoration:none;">Instagram English</a>
+        </div>
+        <div style="border-top: 1px solid #BBAA91; padding-top: 10px;">
+            ©Copyright 2025 BR Media Inc. | All Rights Reserved
+        </div>
+    </div>
+</footer>
 </html>

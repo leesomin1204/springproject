@@ -3,13 +3,18 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{front/layouts/main}">
 
-
+<th:block layout:fragment="addCommonScript">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eaa907479837aff402a0b5b151235c13"></script>
+</th:block>
 
 <main layout:fragment="content">
-    <h1 th:text="${pageTitle}"></h1>
+
+    <h1 th:text="${pageTitle}">Restaurant Title</h1>
 
     <div id="map"></div>
 
     <script type="application/json" th:utext="${json}"></script>
 </main>
+
+<script th:src="@{/common/js/map.js}"></script>
 </html>
