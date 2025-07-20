@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Rowdies:wght@300;400;700&display=swap');
 body {
     background-color: #f9f8f4;
     color: #4B4035;
@@ -7,7 +8,7 @@ body {
 }
 
 h1 {
-    font-family: 'Rowdies', cursive;
+    font-family: 'Noto Sans KR', cursive;
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
@@ -112,8 +113,8 @@ button[type="submit"]:hover {
     align-items: center;
     justify-content: center;
 
-    padding: 0; /* ✅ 패딩 제거 */
-    line-height: 1; /* ✅ 줄 간격 통일 */
+    padding: 0;
+    line-height: 1;
 
     background-color: #6E5444;
     border: none;
