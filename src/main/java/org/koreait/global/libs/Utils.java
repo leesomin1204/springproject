@@ -147,7 +147,7 @@ public class Utils {
             e.printStackTrace();
         }
 
-        url = StringUtils.hasText(url) ? url : request.getContextPath() + "/common/images/no_image.jpg";
+        url = StringUtils.hasText(url) ? url : request.getContextPath() + "/common/images/thumbnail.jpg";
 
         return String.format("<img src='%s' class='%s%s'>", url, "image-" + seq,StringUtils.hasText(addClass)? " " + addClass : "");
     }

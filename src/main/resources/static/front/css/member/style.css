@@ -1,0 +1,251 @@
+/* 기본 레이아웃 S */
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #E9E4D4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: "Georama", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #333;
+    text-align: center;
+    margin: 2rem 0 3rem 0;
+}
+
+/* 기본 레이아웃 E */
+
+/* 로그인 폼 전체 박스 */
+form[name="frmLogin"] {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+}
+
+/* 제목 */
+form[name="frmLogin"] h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+/* 리스트 스타일 제거 및 중앙 정렬 */
+form[name="frmLogin"] ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 각 입력 필드 스타일 */
+form[name="frmLogin"] li {
+    margin-bottom: 20px;
+}
+
+/* 입력창 */
+form[name="frmLogin"] input[type="text"],
+form[name="frmLogin"] input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* 자동 로그인, 아이디/비밀번호 찾기 */
+form[name="frmLogin"] li .left {
+    float: left;
+}
+form[name="frmLogin"] li .right {
+    float: right;
+    font-size: 12px;
+}
+form[name="frmLogin"] li::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* 로그인 버튼 */
+form[name="frmLogin"] button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #5D4037;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+form[name="frmLogin"] button[type="submit"]:hover {
+    background-color: #7a5c46;
+    box-sizing: border-box;
+}
+
+/* 카카오 로그인 */
+form[name="frmLogin"] a img {
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* 회원가입 버튼 */
+form[name="frmLogin"] a[href*="/member/join"] {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #ddd;
+    border-radius: 6px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: background-color 0.2s;
+    box-sizing: border-box;
+}
+form[name="frmLogin"] a[href*="/member/join"]:hover {
+    background-color: #ccc;
+}
+
+/* 아이디/비밀번호 찾기 링크 */
+form[name="frmLogin"] .right a {
+    color: #999;
+    font-size: 12px;
+    text-decoration: none;
+}
+form[name="frmLogin"] .right a:hover {
+    text-decoration: underline;
+}
+
+/* 에러 메시지 */
+form[name="frmLogin"] .error {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* 회원가입 폼 전체 스타일 */
+form[name="frmJoin"] {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff9f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* h1 제목 스타일 (pageTitle) */
+form[name="frmJoin"] h1 {
+    text-align: center;
+    color: #5D4037;
+    margin-bottom: 24px;
+    font-size: 28px;
+}
+
+/* ul 리스트 기본 제거, 가운데 정렬 */
+form[name="frmJoin"] ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+/* li 내부 입력칸 스타일 */
+form[name="frmJoin"] ul li {
+    margin-bottom: 15px;
+}
+
+/* 입력 칸 스타일 */
+form[name="frmJoin"] input[type="text"],
+form[name="frmJoin"] input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.8px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    text-align: center;
+}
+
+/* 포커스 시 입력 칸 강조 */
+form[name="frmJoin"] input[type="text"]:focus,
+form[name="frmJoin"] input[type="password"]:focus {
+    border-color: #5D4037;
+    outline: none;
+}
+
+/* 오류 메시지 스타일 */
+form[name="frmJoin"] .error {
+    color: #d9534f;
+    font-size: 13px;
+    margin-top: 4px;
+    text-align: center;
+}
+
+/* 약관 제목 */
+form[name="frmJoin"] h3 {
+    color: #5D4037;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* 약관 내용 박스 */
+form[name="frmJoin"] .terms {
+    max-height: 120px;
+    overflow-y: auto;
+    background-color: #f8f1e7;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+    border-radius: 6px;
+}
+
+/* 체크박스 및 라벨 */
+form[name="frmJoin"] input[type="checkbox"] {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+form[name="frmJoin"] label[for="terms-agree"] {
+    font-size: 14px;
+    color: #5D4037;
+    cursor: pointer;
+}
+
+/* 가입하기 버튼 스타일 */
+form[name="frmJoin"] button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #5D4037;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+form[name="frmJoin"] button[type="submit"]:hover {
+    background-color: #4a2f29;
+}
+
+/* 전체 글로벌 오류 메시지 중앙 정렬 */
+form[name="frmJoin"] .error.global {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
